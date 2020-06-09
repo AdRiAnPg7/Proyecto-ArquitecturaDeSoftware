@@ -1,0 +1,108 @@
+<!-- NAVBAR -->
+#parse("/velocity/navbar.vm")
+#@mainLayout()
+#end
+
+<style>
+body{
+  font-family: "Helvetica";
+  background-image: url('http://www.unamglobal.unam.mx/wp-content/uploads/2018/05/universo-990x556.jpg');
+  background-size: cover;
+}
+
+#customers {
+  border-collapse: collapse;
+  width: 90%;
+background-color: #ddd;
+ 
+}
+
+#customers td, #customers th {
+  border: 0.5px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+ background-color: LightCoral;
+  color: white;
+}
+
+.title{
+	color:white;
+	font-size:30px;
+	margin: auto;
+	text-align: left;
+	width: 700px;
+}
+
+.container{
+    margin: auto;
+	text-align: center;
+    width: 1300px;
+}
+
+.button {
+  background-color: #a3218e; 
+  color: white;
+  padding: 10px 32px;
+  text-decoration: none;
+  font-size: 16px; 
+}
+.button:hover {
+	opacity:0.8;
+}
+
+.card{
+ 	background: rgba(0, 0, 0, 0.4);
+}
+
+.title-Container{
+	margin:auto;
+    width: 1300px;
+    display: flex;
+	text-align:center;
+  	height:150px;
+}
+
+</style>
+
+<header>
+</header>
+<body>
+
+	<div class="card">
+		<div class="title-Container">
+			<div class="title">
+				<h1>Numeros Registrados</h1>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="container">		
+	  	  
+	
+	<table  id="customers">
+	  	<tr>
+	  	  	<th>#Usuario</th>
+		    <th>Nombre</th>
+		    <th>Numero</th> 
+		    <th>Plan</th>
+	 	 </tr>
+	 	 #foreach($Usuario in $Usuarios)
+		 <tr>
+		 	<td>$foreach.count</td>
+		    <td>$Usuario.obtenerNombre()</td>
+		    <td>$Usuario.obtenerNumero()</td>
+		    <td>$Usuario.obtenerPlanString()</td>
+		 </tr>	
+		 #end
+		 </table>
+	 </div>
+</body>

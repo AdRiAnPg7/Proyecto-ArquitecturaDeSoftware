@@ -1,0 +1,116 @@
+<!-- NAVBAR -->
+#parse("/velocity/navbar.vm")
+#@mainLayout()
+#end
+<style>
+body{
+  font-family: "Helvetica";
+  background-image: url('http://www.unamglobal.unam.mx/wp-content/uploads/2018/05/universo-990x556.jpg');
+  background-size: cover;
+}
+
+#customers {
+  border-collapse: collapse;
+  width: 100%;
+background-color: #ddd;
+ 
+}
+
+#customers td, #customers th {
+  border: 0.5px solid black;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #03a45e;
+  color: white;
+}
+
+.title{
+	color:white;
+	font-size:30px;
+	margin: auto;
+	text-align: left;
+	width: 700px;
+}
+.container{
+    margin: auto;
+	text-align: center;
+    width: 1300px;
+}
+
+.button {
+	background-color: #3366cc; 
+	color: white;
+	text-decoration: none;
+	height:50px;
+	width: 150px;
+	font-size: 16px; 
+	margin:auto; 
+	margin-right:300px; 
+	border-radius:30px;
+}
+.button:hover {
+	opacity:0.8;
+}
+
+.card{
+ 	background: rgba(0, 0, 0, 0.4);
+}
+
+.title-Container{
+	margin:auto;
+    width: 1300px;
+    display: flex;
+	text-align:center;
+  	height:150px;
+}
+
+.form{
+	margin:auto;
+	
+	text-align:center;
+}
+</style>
+<header>
+</header>
+<body>
+
+	<div class="card">
+		<div class="title-Container">
+			<div class="title">
+				<h1>Seleccione el Archivo. </h1>
+			</div>
+		</div>
+	</div>
+	
+	<div class="form">
+		<h2>Formulario para Cargar CDRs</h2>
+		<form  method="post" action="/api/submit" enctype="multipart/form-data">
+			
+			<!-- Nombre :<input  type="t	ext" name="name"/>-->
+				<p>
+		   <label>Seleccionar Archivo: </label> <input  class="btn-file"  type="file" name="myFile"/>
+				<p>
+			<input type="submit" class="button" value="Cargar">
+		</form>
+	</div>
+	
+	
+	<form action ="" id="form_subir">
+		<div class= "form-1-2">
+			<label for=""> Archivo: </label>
+			<input type="file" id="fileUpload" name="fileUpload" required>
+		</div>
+		
+		<div class ="acciones">
+			<input type="submit" class="btn" value="Enviar">
+			<input type="button" class= "cancel" id = "Cancelar" value="Cancelar">
+		</div>
+</body>

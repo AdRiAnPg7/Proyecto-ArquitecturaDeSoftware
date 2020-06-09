@@ -1,0 +1,50 @@
+ <!-- NAVBAR -->
+#parse("/velocity/navbar.vm")
+#@mainLayout()
+#end
+<style>
+body{
+  font-family: "Helvetica";
+  background-image: url('http://www.unamglobal.unam.mx/wp-content/uploads/2018/05/universo-990x556.jpg');
+  background-size: cover;
+}
+
+.title{
+	color:white;
+	font-size:30px;
+	margin: auto;
+	text-align: left;
+	width: 700px;
+}
+
+.container{
+    margin: auto;
+	text-align: center;
+    width: 1300px;
+}
+
+
+.card{
+ 	background: rgba(0, 0, 0, 0.4);
+}
+
+.title-Container{
+	margin:auto;
+    width: 1300px;
+    display: flex;
+	text-align:center;
+  	height:150px;
+}
+
+</style>
+<header>
+</header>
+<body>
+	<div class="card">
+		<div class="title-Container">
+			<div class="title">
+				<h1>BIENVENIDO</h1>
+			</div>
+		</div>
+	</div>
+</body>

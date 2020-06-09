@@ -1,0 +1,120 @@
+<!-- NAVBAR -->
+#parse("/velocity/navbar.vm")
+#@mainLayout()
+#end
+<style>
+body{
+  font-family: "Helvetica";
+  background-image: url('http://www.unamglobal.unam.mx/wp-content/uploads/2018/05/universo-990x556.jpg');
+  background-size: cover;
+}
+
+#customers {
+  border-collapse: collapse;
+  width: 90%;
+  background-color: #ddd;
+ 
+}
+
+#customers td, #customers th {
+  border: 0.5px solid black;
+  padding: 8px;
+   text-align: center;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+ 
+ background-color: LightCoral;
+  color: white;
+}
+
+.title{
+	color:white;
+	font-size:30px;
+	margin: auto;
+	text-align: left;
+	width: 700px;
+}
+.container{
+    margin: auto;
+	text-align: center;
+    width: 1300px;
+}
+
+.button {
+	background-color: IndianRed; 
+	color: white;
+	text-decoration: none;
+	height:50px;
+	width: 150px;
+	font-size: 16px; 
+	margin:auto; 
+	margin-right:300px; 
+}
+.button:hover {
+	opacity:0.8;
+}
+
+.card{
+ 	background: rgba(0, 0, 0, 0.4);
+}
+
+.title-Container{
+	margin:auto;
+    width: 1300px;
+    display: flex;
+	text-align:center;
+  	height:150px;
+}
+</style>
+<header>
+</header>
+<body>
+
+	<div class="card">
+		<div class="title-Container">
+			<div class="title">
+				<h1>$Title </h1>
+			</div>
+	
+		</div>
+	</div>
+
+	<div class="container">		
+		<table id="customers">
+	  	<tr>
+		    <th>#CDR</th>
+		    <th>Numero Origen</th>
+		    <th>Numero Destino</th> 
+		    <th>Fecha</th>
+		    <th>Hora </th>
+		    <th>Duracion Llamada</th>
+
+	 	 </tr>
+	 	 #foreach($CDR in $CDRs)
+		  <tr>
+		  		<td>$foreach.count</td>
+			    <td>$CDR.obtenerNumeroDelTelefonoOrigen()</td>
+			    <td>$CDR.obtenerNumeroDelTelefonoDestino()</td>
+			    <td>$CDR.obtenerFecha()</td>
+			    <td>$CDR.obtenerHoraInicioLlamada()</td>
+			    <td>$CDR.obtenerDuracionLlamada()</td>
+		  </tr>	
+		  #end
+		  </table>
+	  	  
+	  		
+		<div class="title-Container">
+
+			<a href="http://localhost:4567/CDRsTarificados" class="button"><p>Guardar</p></a>
+		
+		</div>
+
+
+	 </div>
+</body>
